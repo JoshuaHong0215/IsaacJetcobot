@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code
+.vscode/
+
+# Isaac Sim / Temporary files
+*.usd
+*.usda
+*.log

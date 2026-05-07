@@ -15,9 +15,9 @@ fancy_cube =  world.scene.add(
     DynamicCuboid(
         prim_path="/World/random_cube",
         name="fancy_cube",
-        position=np.array([0, 0, 5.0]),
-        scale=np.array([2.0, 2.0, 2.0]),
-        color=np.array([0, 0, 1.0]),
+        position=np.array([0, 0, 1.0]),
+        scale=np.array([2.0, 2.0, 1.0]),
+        color=np.array([1.0, 1.0, 1.0]),
     ))
 # Resetting the world needs to be called before querying anything related to an articulation specifically.
 # Its recommended to always do a reset after adding your assets, for physics handles to be propagated properly
