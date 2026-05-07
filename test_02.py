@@ -3,6 +3,8 @@
 from isaacsim import SimulationApp
 simulation_app = SimulationApp({"headless": False}) # we can also run as headless.
 
+import light
+
 from isaacsim.core.api import World
 from isaacsim.core.api.objects import DynamicCuboid
 import numpy as np
@@ -19,7 +21,14 @@ fancy_cube =  world.scene.add(
     ))
 # Resetting the world needs to be called before querying anything related to an articulation specifically.
 # Its recommended to always do a reset after adding your assets, for physics handles to be propagated properly
+
+# Isaacsim에서는 모든 물체와 조명을 배치한 뒤에 world.reset을 하는 편이 좋음
+light.setup_all_lights()
+
 world.reset()
+
+
+
 
 # app을 계속 실행
 while simulation_app.is_running():
