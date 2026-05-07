@@ -7,6 +7,9 @@ import light
 
 from isaacsim.core.api import World
 from isaacsim.core.api.objects import DynamicCuboid
+
+from omni.isaac.core.utils.stage import add_reference_to_stage
+import os
 import numpy as np
 
 world = World()
@@ -21,6 +24,14 @@ fancy_cube =  world.scene.add(
     ))
 # Resetting the world needs to be called before querying anything related to an articulation specifically.
 # Its recommended to always do a reset after adding your assets, for physics handles to be propagated properly
+
+
+# 파일 절대경로 가져오기
+jetcobot_path = os.path.abspath("usd/JETCOBOT.usd")
+
+# Stage에 로봇 추가
+add_reference_to_stage(usd_path=jetcobot_path, prim_path = "World/Jetcobot")
+
 
 # Isaacsim에서는 모든 물체와 조명을 배치한 뒤에 world.reset을 하는 편이 좋음
 light.setup_all_lights()
